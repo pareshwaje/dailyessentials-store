@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Essentials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #1e494e;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #1e494e;
+            margin-bottom: 20px;
+        }
+        .scroll-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+        .arrow {
+            font-size: 24px;
+            color: #1e494e;
+            cursor: pointer;
+            user-select: none;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            max-width: 100%;
+            scroll-behavior: smooth;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        @media (min-width: 768px) {
+            .button-container {
+                overflow-x: hidden;
+                justify-content: center;
+            }
+            .arrow {
+                display: none;
+            }
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-width: 100px;
+            height: 100px;
+            border: 2px solid #1e494e;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+            color: #1e494e;
+            font-size: 14px;
+            font-weight: 500;
+            flex-shrink: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .btn img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daily Essentials</h1>
+    <h2>Organizers for Wardrobe, Kitchen, Fridge, and More</h2>
+
+    <div class="scroll-container">
+        <div class="arrow" onclick="scrollLeft()">&#8249;</div>
+        <div class="button-container" id="scrollable">
+          <a href="#" class="btn">
+            <img src="https://www.meesho.com/assets/img/new-meesho-logo.svg" alt="Meesho logo" width="40px" height="40px">
+            Shop with Meesho
+          </a>
+          <a href="#" class="btn">
+            <img src="https://images.amazon.com/images/I/1ZGp9qOXhOL.png" alt="Amazon logo" width="40px" height="40px">
+            Shop with Amazon
+          </a>
+          <a href="#" class="btn">
+            <img src="https://www.flipkart.com/static/mw/ tokopedia/flipkart-logo.svg" alt="Flipkart logo" width="40px" height="40px">
+            Shop with Flipkart
+          </a>
+          <a href="#" class="btn">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZLmR_I4y3TcPLKjQKbIDe_WJ撲0FNtknFQ&usqp=CAU" alt="WhatsApp logo" width="40px" height="40px">
+            Shop with WhatsApp
+          </a>
+        </div>
+        <div class="arrow" onclick="scrollRight()">&#8250;</div>
+      </div>
+
+    <script>
+        const scrollable = document.getElementById('scrollable');
+
+        function scrollLeft() {
+            scrollable.scrollBy({ left: -100, behavior: 'smooth' });
+        }
+
+        function scrollRight() {
+            scrollable.scrollBy({ left: 100, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
